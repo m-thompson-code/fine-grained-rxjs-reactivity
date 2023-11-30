@@ -1,0 +1,6 @@
+<div [style.background]="randomColor()">
+  <p>Grand Child</p>
+  <p>Count Signal: {{ dataService.countSignal() }}</p>
+  <p>Count Observable (async): {{ dataService.countObservable | async }}</p>
+  <p>Count Observable (my-async): {{ dataService.countObservable2 | myAsync }}</p>
+</div>

@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { ParentComponent } from './components/parent/parent.component';
+import { DataService } from './services/data.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, ParentComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  title = 'signals-test';
+  dataService = inject(DataService);
 }
